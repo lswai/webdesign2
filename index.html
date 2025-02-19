@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8">     
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>ClimbOn</title> 
+
+        <meta name="author" content="Lynn Su Wai">
+        <meta name="description" content="Mountaineers">
+        <meta name="keywords" content="Mountaineers">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/themes/light.css" />
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/shoelace-autoloader.js"></script>
+        
+
+        
+        <link rel="stylesheet" href="path/to/shoelace/dist/themes/light.css" />
+        <link rel="stylesheet" href="path/to/shoelace/dist/themes/dark.css" />
+        
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ribeye+Marrow&family=Rouge+Script&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">    
+             
+        <script src="main.js"></script>     
+        <link rel="icon" href=""> 
+        
+        
+       
+                
+    </head>
+    <body>
+        
+
+        <!--HEADER-->
+        
+            <!-- //////////// Nav Bar //////////// -->      
+             
+        <div id="header">
+            <img src="images/ClimbOnLogo.png" alt="Climbon logo" class="logo"> 
+        </div>
+            <!--NAVIGATION-->
+        <div class="navbar">
+            <nav> 
+                
+                <ul>   
+                    
+                    
+                    <li><a href=#about-section> About </a></li>
+                    <li><a href=#gallery-section> Gallery </a></li>
+                    <li><a href=#gears-section> Gears </a></li>
+                    <li><a href=#safety-section> Safety Concern </a></li>
+                    <li><a href=#preparation-section> Preparation </a></li>
+                    <li><a href=#contact> Contact </a></li>
+                </ul>
+              
+            </nav>      
+        </div>
+        <h1></h1>
+        <sl-switch id="theme-toggle">🌙 Dark Mode</sl-switch>
+        
+        
+       <main>
+          
+            <!--SECTION 1-->
+            <!--ABOUT -->
+            <section id="about-section" class="about-fade-in">
+                <h1 class="about-title">About</h1>
+                <div class="about-content">
+                    <img src="images/About_image.jpg" alt="Climber on a mountain" class="about-photo"> 
+                    <div class="about-text">
+                        <p>Welcome to ClimbOn, your gateway to mastering the art of mountaineering and fostering a deeper connection with the great outdoors. 
+                            Whether you are a seasoned climber scaling towering peaks or a beginner eager to take your first step 
+                            into the world of mountaineering, our mission is to guide, educate, and inspire you every step of the way.</p>
+                        <p>At ClimbOn, we are a team of experienced mountaineers, outdoor enthusiasts, and educators passionate about equipping 
+                            adventurers with the skills, knowledge, and confidence needed to navigate mountainous terrains safely and responsibly.</p>
+                    </div>
+                    </div>
+                        
+                </div>
+
+            </section>
+
+            <!--SECTION 2-->
+            <section id="gallery-section">
+                <h1 class="gallery-title">Gallery</h1>
+                <div class="slideshow-container">
+                    <div class="image-track">
+                        <div class="image-box">
+                            <img src="images/gallery_img_1.jpg" alt="Mountain View">
+                            <div class="description">A beautiful snowy mountain view.</div>
+                        </div>
+                        <div class="image-box">
+                            <img src="images/gallery_img_2.jpg" alt="Rocky Trail">
+                            <div class="description">Exploring the rocky trails in the canyon.</div>
+                        </div>
+                        <div class="image-box">
+                            <img src="images/gallery_img_3.jpg" alt="Sunrise Hike">
+                            <div class="description">A sunrise hike with breathtaking views.</div>
+                        </div>
+                        <div class="image-box">
+                            <img src="images/gallery_img_4.jpg" alt="Forest Walk">
+                            <div class="description">Walking through the misty forest.</div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Dots for navigation -->
+                <div class="dots-container">
+                    <sl-tooltip content="Click to select the first image">
+                        <button class="dot" onclick="currentSlide(1)"></button>
+                    </sl-tooltip>
+                    <sl-tooltip content="Click to select the second image">
+                        <button class="dot" onclick="currentSlide(2)"></button>
+                    </sl-tooltip>
+                    <sl-tooltip content="Click to select the third image">
+                        <button class="dot" onclick="currentSlide(3)"></button>
+                    </sl-tooltip>
+                    <sl-tooltip content="Click to select the fourth image">
+                        <button class="dot" onclick="currentSlide(4)"></button>
+                    </sl-tooltip>
+                </div>
+
+        
+            </section>
+
+           
+        <!--SECTION 3-->
+        <section id="gears-section">
+            <h1 class="gears-title">Gears</h1>
+            <div class="container">
+                
+                <h2>Lists</h2>
+                <div class="list-box">
+                    <ul>
+                        <li class="list">* Ropes</li>
+                        <li class="list">* Harnesses</li>
+                        <li class="list">* Helmet</li>
+                        <li class="list">* Crampons</li>
+                        <li class="list">* Maps</li>
+                        <li class="list">* Compass</li>
+                        <li class="list">* Knives</li>
+                        <li class="list">* Matches</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+         <!--SECTION 4-->
+
+         <section id="safety-section">
+            <div class="container">
+                <h1 class="safety-title">Safety Concern</h1>
+                
+                <div class="grid">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">Weather</div>
+                            <div class="flip-card-back">Safety is paramount in mountaineering, where nature's challenges demand preparation and awareness. Unpredictable weather can bring sudden storms or freezing temperatures, requiring proper gear and vigilance.</div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">Wild Animals</div>
+                            <div class="flip-card-back">Encounters with wild animals, such as bears or mountain lions, highlight the need for understanding local wildlife and securing food to avoid attracting them.</div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">Avalanches</div>
+                            <div class="flip-card-back">In snowy regions, avalanches pose a serious threat, making it essential to recognize warning signs and carry rescue equipment like beacons and shovels.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-second" >
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">Dehydration</div>
+                            <div class="flip-card-back">Dehydration is another risk, especially at high altitudes, so maintaining hydration with adequate water supplies is crucial.</div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">Hypothermia</div>
+                            <div class="flip-card-back">Prolonged exposure to cold and wet conditions can lead to hypothermia, emphasizing the importance of layering with insulating, moisture-wicking clothing and recognizing early symptoms to act quickly.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!--SECTION 5-->
+        <!--Preparation-->
+        <section id="preparation-section">
+            <div class="container">
+                <h1 class="preparation-title">Preparation</h1>
+                
+            
+                <div class="session">
+                    <img id="image1" src="images/preparation_img1.jpg" alt="Mountaineers hiking">
+                    <div class="text">
+                        <p>
+                            Preparation for mountaineering requires a comprehensive approach to ensure safety and success. 
+                            Altitude acclimatization is essential to adapt to reduced oxygen levels, involving gradual 
+                            exposure to higher altitudes and adequate hydration to prevent altitude sickness. Building 
+                            physical and mental endurance through rigorous cardio workouts, strength training, and mental 
+                            resilience exercises prepares climbers for the demands of long, challenging expeditions. 
+                            Developing physical strength, especially in the legs, core, and upper body, is critical for 
+                            handling steep ascents and carrying heavy loads.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="session">
+                    <img id="image2" src="images/preparation_img2.jpg" alt="Climber scaling rock">
+                    <div class="text">
+                        <p>
+                            Structured training programs that simulate mountaineering conditions can help improve balance, 
+                            coordination, and stamina. Detailed route planning, including studying maps, weather conditions, 
+                            and potential hazards, ensures preparedness for unforeseen challenges. Lastly, understanding mountain 
+                            environments, such as recognizing changing weather patterns and assessing avalanche risks, is crucial 
+                            for making informed decisions during the climb. Together, these elements form a solid foundation for a 
+                            successful and safe mountaineering experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        </main>
+       
+        <!--MAIN CONTENT ENDS-->
+        <!--
+        <div class="buttContainer"><sl-button onclick="topFunction()" id="bttop" title="Back to top">Top</sl-button></div> -->
+
+        <!--FOOTER-->
+        <!--CONTACT Us-->
+        <footer>
+            <section id="contact">
+                <div class="container">
+                    <img id="logo" src="images/ClimbOnLogo.png" alt="ClimbOn Logo">
+                    <div class="contact-info">
+                        <h1 class="contact-title">Contact Us</h1>
+                        <p><strong>Address:</strong> 1 Victor Road Sydney NSW 2000</p>
+                        <p><strong>Email:</strong> consultant@climbon.com.au</p>
+                        <p><strong>Phone:</strong> 0423456789</p>
+
+                        <sl-dialog label="Business Hours & Emergency Contact" class="dialog-overview">
+                            Business hours:<br>
+                            Mon - Fri : 8 am - 5pm (AEST)
+                            <br>
+                            Please call "000" for Emergency Urgent Contact!
+                            <br>
+                            <sl-button slot="footer" variant="primary">Close</sl-button>
+                          </sl-dialog>
+                          
+                          <sl-button> Business Hours & Emergency Contact </sl-button>
+                    </div>
+                </div>
+    
+            </section>
+        </footer>
+   
+    </body> 
+</html>
