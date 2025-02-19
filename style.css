@@ -1,31 +1,29 @@
-/* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
-/* Adds padding for smooth scrolling to account for a fixed header. */
+/* ========== BASIC UNIVERSAL STYLING & CLEAN UP ============= */
+/* Prevents horizontal scrolling and ensures smooth scrolling with fixed header */
 html {
     overflow-x: hidden;
     max-width: 100%;
     scroll-padding-top: 80px;
 }
 
-
-
-/* ==========HEADER============= */
-/* ==========LOGO============= */
+/* ========== HEADER ============= */
+/* Styles the header section */
 #header {
     text-align: center;
     padding: 10px;
     background-color: white;
 }
 
+/* Styles the logo image */
 .logo {
-    width: 80px; /* Adjust size as needed */
+    width: 80px;
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
 }
-/* ==========NAVIGATION============= */
 
-/* Makes the navigation bar sticky, ensuring it stays at the top while scrolling. */
-
+/* ========== NAVIGATION ============= */
+/* Sticky navigation bar with centered items */
 .navbar {
     background-color: #91C7F6; /* Light blue color */
     padding: 10px 0;
@@ -38,58 +36,43 @@ html {
     z-index: 100;
     justify-content: center;
     width: 100%;
-    margin: auto;
-    
-    
+    margin: auto;    
 }
 
-/* Styles navigation links with padding, color, and font settings. */
+/* Styles for navigation links */
 nav a {
     width: 80px;
-    padding: 5px 10px; /* to align with logo */
+    padding: 5px 10px; 
     font-size: 20px;
     text-decoration: none;
     color: black;
     background: #91C7F6;
     margin: 0 15px;
     text-align: center;
-    
-    /*
-    
-    
-   display: block;
-    
-    font-size: 20px; 
-    
-    */
     white-space: nowrap; /* Prevent text from wrapping */
     overflow: visible;
 }
-/* Changes link color when hovered over for better user interaction. */
+
+/* Changes link color on hover */
 nav a:hover {
     color: #9B4E14;
 }
 
-/* Resizes the navigation logo. */
-/*nav img {
-    width: 120%;
-    height: 120%;
-}*/
 /* Removes padding and margin from the unordered list and hides bullet points. */
 ul {
     padding: 0;
     margin: 0 0 0 15px;
     list-style: none;
 }
+
 /* Displays list items in a horizontal row. */
 li{
-    float: left;
-   
+    float: left;  
 }
 
 
-/* ==========MAIN BODY CONTENT============= */
-/* Resets default body margins and sets universal font styles. */
+/* ========== MAIN BODY CONTENT ============= */
+/* General styling for the body */
 body { 
     margin: 0; /* removes little margin around entire body of site that is there by default */
     padding: 0;
@@ -98,11 +81,13 @@ body {
     box-sizing: border-box; /* Ensures padding and borders are included in element width/height. */
 
 }
+
 /* Adds consistent spacing for all div elements. */
 div {
     margin: 15px;
 }
-/* Sets consistent styles for headings. */
+
+/* Standard headings styles */
 h1 {
     margin: 15px;
     font-size: 30px;
@@ -111,6 +96,8 @@ h2 {
     font-size: 30px;
     margin-left: 30px;
 }
+
+/* Standard paragraph styles */
 p { 
     margin-left: 20px;
     font-size: 15px;
@@ -118,17 +105,17 @@ p {
 }
 
 
-/* ==========SECTION 1 STYLING============= */
-
+/* ========== SECTION 1 STYLING ============= */
 /* Styles the "About" section  */
 
-
+/* Common styling for multiple sections */
 #about-section, #gallery-section, #gears-section, #safety-section, #preparation-section, #contact-section {
     width: 80%;
     margin: 50px auto;
     text-align: center;
 }
 
+/* Titles for sections */
 .about-title, .gallery-title, .gears-title, .safety-title, .preparation-title, .contact-title{
     font-size: 36px;
     font-family: "Ribeye Marrow", serif;
@@ -138,6 +125,7 @@ p {
     
 }
 
+/* About section content layout */
 .about-content {
     display: flex;
     align-items: center;
@@ -146,12 +134,14 @@ p {
     gap: 20px;
 }
 
+/* Image styling in About section */
 .about-photo {
     width: 250px;
     height: auto;
     border-radius: 8px;
 }
 
+/* Text styling in About section */
 .about-text {
     max-width: 600px;
     font-size: 16px;
@@ -159,24 +149,32 @@ p {
     line-height: 1.6;
 }
 
-/*====about-affect====*/
+/*====about-affect for animation text fly in from right and photo from left====*/
+/* Initially hides the about-photo by setting opacity to 0 
+   and moves it completely to the left (-100%) */
 .about-photo {
     opacity: 0;
     transform: translateX(-100%);
     transition: all 1s ease-in-out;
 }
 
+/* Initially hides the about-text by setting opacity to 0 
+   and moves it completely to the right (100%) */
 .about-text {
     opacity: 0;
     transform: translateX(100%);
     transition: all 1s ease-in-out;
 }
 
+/* When the parent element has the "visible" class, 
+   the about-photo becomes fully visible and moves back to its original position */
 .visible .about-photo {
     opacity: 1;
     transform: translateX(0);
 }
 
+/* When the parent element has the "visible" class, 
+   the about-text becomes fully visible and moves back to its original position */
 .visible .about-text {
     opacity: 1;
     transform: translateX(0);
@@ -184,55 +182,61 @@ p {
 
 /* ==========SECTION 2 STYLING============= */
 /* Styles gallery blocks to be inline and of uniform size. */
-
 #gallery-section {
-    
     width: 100%;
     background-color: #91C7F6;
 }
+/* Adds spacing to the gallery title */
 .gallery-title {
     padding-top: 20px;
 }
 
+/* SLIDESHOW STYLING */
+/* Container for the image slideshow */
 .slideshow-container {
     width: 800px; /* Increased width for two images */
-    overflow: hidden;
-    margin: auto;
-    position: relative;
-    background: #91C7F6;
+    overflow: hidden; /* Prevents overflow of hidden images */
+    margin: auto; /* Centers the slideshow */
+    position: relative; /* Positions elements within the container */
+    background: #91C7F6; 
 }
 
+/* IMAGE SLIDER TRACK */
+/* Flexbox container that holds all images */
 .image-track {
-    display: flex;
-    width: 100%;
-    /*animation: slideShow 8s linear infinite;*/
-    transition: transform 0.5s ease-in-out; 
+    display: flex;  /* Displays images in a row */
+    width: 100%; 
+    transition: transform 0.5s ease-in-out;  /* Smooth sliding animation */
 }
 
+
+/* Wrapper for individual images */
 .image-box {
-    position: relative;
+    position: relative;  /* Enables absolute positioning for child elements */
     width: 50%; /* Ensures two images fit at a time */
-    flex-shrink: 0;
-    overflow: hidden;
+    flex-shrink: 0; /* Prevents resizing when flex container shrinks */
+    overflow: hidden; /* Prevents content from overflowing */
 }
 
+/* Styles for images inside the slideshow */
 .image-box img {
     height: 500px;
     width: 400px;
     border-radius: 10px;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out; /* Adds a smooth effect when scaling */
 }
 
+/* Zoom effect when hovering over an image */
 .image-box:hover img {
-    transform: scale(1);
+    transform: scale(1);  /* Currently disabled scaling (should be >1 for zoom effect) */
 }
 
-/* Description on hover */
+/* Description box appears when hovering over an image */
 .description {
-    position: absolute;
+    position: absolute; /* Positions description relative to image-box */
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Ensures exact centering */
     background: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px;
@@ -243,23 +247,12 @@ p {
     width: 80%;
 }
 
+/* Shows the description when hovering over an image box */
 .image-box:hover .description {
     display: block;
 }
 
-/* Sliding Animation */
-/*
-@keyframes slideShow {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-50%); }
-    50% { transform: translateX(-100%); }
-    100% { transform: translateX(0%); }
-  
-}*/
 
-.slideshow-container:hover .image-track {
-    animation-play-state: paused; /* Pauses the animation on hover */
-}
 
 /* Navigation Dots */
 .dots-container {
@@ -267,6 +260,7 @@ p {
     margin-top: 10px;
 }
 
+/* Styles for each dot */
 .dot {
     height: 12px;
     width: 12px;
@@ -278,6 +272,7 @@ p {
     cursor: pointer;
 }
 
+/* Active and hover effect for dots */
 .dot.active, .dot:hover {
     background-color: #717171;
 }
@@ -286,6 +281,7 @@ p {
 
 /* ==========SECTION 3 STYLING============= */
 /* Styles the "Gears" section */
+/* Container styling for the gears section */
 #gears-section .container {
     text-align: left;
     height: 350px;
@@ -295,6 +291,8 @@ p {
     padding: 20px;
     border-radius: 10px;
 }
+
+/* Styling for headings inside the gears section */
 #gears-section h1 {
     font-size: 28px;
 }
@@ -303,8 +301,8 @@ p {
     font-weight: 400;
     font-style: normal;
 }
+/* Styling for the list box container */
 #gears-section .list-box {
-    
     width: 150px;
     padding: 15px;
     border-radius: 5px;
@@ -312,10 +310,12 @@ p {
     border: 1px solid black;
     
 }
+/* Removes default list styling from unordered lists */
 #gears-section ul {
     list-style-type: none;
     padding: 0;
 }
+/* Styling for individual list items */
 #gears-section .list {
     font-size: 18px;
     margin: 5px 0;
@@ -334,7 +334,7 @@ p {
     transform: translateX(-500px);
     transition: opacity 0.3s ease-out, transform 0.8s ease-out;
 }
-
+/* Class to make list items visible with animation */
 .list.visible {
     opacity: 1;
     transform: translateX(0);
@@ -345,7 +345,7 @@ p {
 .safety-title {
     padding-top: 50px;
 }
-
+/* Styles the main safety section container */
 #safety-section {
     background-color: #91C7F6;
     width: 100%;
@@ -354,6 +354,7 @@ p {
     text-align: center;   
 }
 
+/* Styles the container inside the safety section */
 #safety-section .container {
     width: 80%;
     margin: 50px auto;
@@ -361,25 +362,28 @@ p {
    
 }
 
+/* Styles the grid layout inside the safety section */
 #safety-section .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 20px; /* Adds spacing between grid items */
     justify-content: center;
     background-color: #91C7F6;
     height: 100%;
 }
 
-
+/* Styles a secondary grid layout with more spacing */
 #safety-section .grid-second {
     margin-left: 200px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 150px;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 150px; /* Adds spacing between grid items */
     justify-content: center;
     background-color: #91C7F6;
     height: 100%;
 }
+
+/* Styles the flip card container */
 .flip-card {
     background-color: transparent;
     width: 250px;
@@ -387,7 +391,7 @@ p {
     perspective: 1000px;
 }
 
-
+/* Styles the inner flip card element */
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -396,20 +400,26 @@ p {
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
+
+/* Flips the card on hover */
 .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Rotates the card on the Y-axis */
 }
+
+/* Styles both the front and back sides of the flip card */
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
-    display: flex;
+    backface-visibility: hidden; /* Hides the back face when flipped */
+    display: flex; /* Uses flexbox for alignment */
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     padding: 10px;
 }
+
+/* Styles the front side of the flip card */
 .flip-card-front {
     font-family: "Rouge Script", serif;
     font-weight: 400;
@@ -418,9 +428,10 @@ p {
     font-size: 30px;
     font-weight: bold;
 }
+/* Styles the back side of the flip card */
 .flip-card-back {
     background-color: #a08b65;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg);  /* Rotates the back face to be hidden initially */
 }
 
 
@@ -429,31 +440,31 @@ p {
 /* ==========SECTION 5 STYLING============= */
 /* ==========Preparation============= */
 
-
-
+/* Styles the container inside the preparation section */
 #preparation-section .container {
     max-width: 800px;
     background: white;
     padding: 20px;
     margin: auto;
     border-radius: 10px;
-   
 }
 
 
-
+/* Styles the session layout inside the preparation section */
 #preparation-section .session {
     display: flex;
     align-items: center;
     margin: 20px 0;
 }
 
+/* Styles images inside the session */
 #preparation-section .session img {
     width: 40%;
     border-radius: 10px;
     margin-right: 20px;
 }
 
+/* Styles the text container inside the session */
 .text {
     width: 60%;
     text-align: left;
@@ -469,103 +480,78 @@ p {
     opacity: 1; /* Fully visible when class is added */
 }
 
-
-
-
-
 /* ==========Footer============= */
 /* ==========Contact Us============= */
-#contact {
+/* Styles the contact section */
+#contact-section {
     background-color: #91C7F6;
 }
 
-
-
-#contact .container {
+/* Styles the container inside the contact section */
+#contact-section .container {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: left;
     background: white;
     padding: 20px;
-    border-radius: 10px;
     max-width: 600px;
     margin: auto;
     background-color: #91C7F6;
 }
 
-#contact .container img {
+/* Styles images inside the contact section */
+#contact-section .container img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-right: 20px;
 }
-
+/* Styles contact information text */
 .contact-info {
     font-size: 16px;
     color: black;
 }
 
-/* ========= shoelace ==== */
-
+/* ========= shoelace Darkmode on and offf==== */
+/* Defines default color variables */
 :root {
     --bg-color: white;
     --text-color: black;
-  }
+}
   
-  .dark-mode {
+/* Dark mode styles */
+.dark-mode {
     --bg-color: black;
     --text-color: gold;
-  }
-  
-  body {
+}
+
+/* Applies theme colors to the body */
+body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background 0.3s, color 0.3s;
-  }
+ }
+
 
 /* ==========RESPONSIVE DESIGN============= */
 
 /* ===== 5K RETINA MAC LABS: Media queries for Curtin Uni mac lab testing only ===== */
-@media only screen and (max-width: 5120px) {
-   
-}
-        
 
-
-/* ===== DESKTOP HD: Media queries for most HD desktops ===== */
-@media only screen and (max-width: 1920px) {
-   
-    
-    
-}
-
-/* ===== SMALL DESKTOP: Media queries for laptop/small desktop ===== */
-@media only screen and (max-width: 1366px) { 
-
-   
-    
-    
-}
-
-/* ===== TABLET: Media queries for tablet resolution. ===== */
-@media only screen and (max-width: 1024px) { 
-    
-    
-}
 
 @media only screen and (max-width: 768px) { 
     @media (max-width: 768px) {
+        /* Adjusts session layout for smaller screens */
         .session {
             flex-direction: column;
             text-align: center;
         }
-        
+        /* Makes session images full width on smaller screens */
         .session img {
             width: 100%;
             margin-bottom: 10px;
         }
-        
+        /* Adjusts text width for smaller screens */
         .text {
             width: 100%;
         }
@@ -575,14 +561,5 @@ p {
     
 }
 
-/* ===== MOBILE: Media queries for small mobile resolution. ===== */
-@media only screen and (max-width: 640px) { 
-    
-   
-}
 
-
-@media only screen and (max-width: 360px) {            
-
-}
 

@@ -58,12 +58,13 @@
                     <li><a href=#gears-section> Gears </a></li>
                     <li><a href=#safety-section> Safety Concern </a></li>
                     <li><a href=#preparation-section> Preparation </a></li>
-                    <li><a href=#contact> Contact </a></li>
+                    <li><a href=#contact-section> Contact </a></li>
                 </ul>
               
             </nav>      
         </div>
         <h1></h1>
+         <!-- Shoelace Theme Toggle (Dark Mode on/off) -->
         <sl-switch id="theme-toggle">🌙 Dark Mode</sl-switch>
         
         
@@ -89,6 +90,7 @@
             </section>
 
             <!--SECTION 2-->
+            <!--GALLERY-->
             <section id="gallery-section">
                 <h1 class="gallery-title">Gallery</h1>
                 <div class="slideshow-container">
@@ -111,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                 <!-- Dots for navigation -->
+                 <!-- Dots for navigation and Shoelace tooltips-->
                 <div class="dots-container">
                     <sl-tooltip content="Click to select the first image">
                         <button class="dot" onclick="currentSlide(1)"></button>
@@ -132,6 +134,7 @@
 
            
         <!--SECTION 3-->
+        <!-- GEARS -->
         <section id="gears-section">
             <h1 class="gears-title">Gears</h1>
             <div class="container">
@@ -151,8 +154,9 @@
                 </div>
             </div>
         </section>
-         <!--SECTION 4-->
 
+         <!--SECTION 4-->
+         <!-- SAFETY CONCERN -->
          <section id="safety-section">
             <div class="container">
                 <h1 class="safety-title">Safety Concern</h1>
@@ -198,7 +202,7 @@
         </section>
 
         <!--SECTION 5-->
-        <!--Preparation-->
+        <!-- PREPARATION -->
         <section id="preparation-section">
             <div class="container">
                 <h1 class="preparation-title">Preparation</h1>
@@ -239,13 +243,11 @@
         </main>
        
         <!--MAIN CONTENT ENDS-->
-        <!--
-        <div class="buttContainer"><sl-button onclick="topFunction()" id="bttop" title="Back to top">Top</sl-button></div> -->
-
+        
         <!--FOOTER-->
         <!--CONTACT Us-->
         <footer>
-            <section id="contact">
+            <section id="contact-section">
                 <div class="container">
                     <img id="logo" src="images/ClimbOnLogo.png" alt="ClimbOn Logo">
                     <div class="contact-info">
@@ -254,6 +256,7 @@
                         <p><strong>Email:</strong> consultant@climbon.com.au</p>
                         <p><strong>Phone:</strong> 0423456789</p>
 
+                         <!-- Shoelace Dialog Box-->
                         <sl-dialog label="Business Hours & Emergency Contact" class="dialog-overview">
                             Business hours:<br>
                             Mon - Fri : 8 am - 5pm (AEST)

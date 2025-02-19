@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     /* About session Photo come in from left and text come in from right*/
-    // Smooth fade-in effect on scroll
+    // Smooth fade-in effect on scroll using Intersection Observer
     const sections = document.querySelectorAll(".about-fade-in");
     const options = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -100px 0px"
+        threshold: 0.1, // Trigger effect when 10% of the section is visible
+        rootMargin: "0px 0px -100px 0px" // Adjusts the trigger point
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
+                entry.target.classList.add("visible"); // Add class when section enters view
             } else {
                 entry.target.classList.remove("visible"); // Reapply effect when scrolling up
             }
@@ -21,29 +21,29 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(section);
     });
 
-    /* Gallery Section */
-    const track = document.querySelector(".image-track");
-    const dots = document.querySelectorAll(".dot");
-    let currentIndex = 0;
-    let totalSlides = dots.length;
-    let autoSlideInterval;
+    /* Gallery Section: Image slider with auto-slide functionality */
+    const track = document.querySelector(".image-track"); // Container for images
+    const dots = document.querySelectorAll(".dot"); // Navigation dots
+    let currentIndex = 0;  // Current image index
+    let totalSlides = dots.length; // Total number of images
+    let autoSlideInterval; // Interval reference for auto-slide
 
     // Function to update the gallery position
     function updateSlide(index) {
         track.style.transform = `translateX(-${index * 50}%)`; // Moves images based on index
-        dots.forEach(dot => dot.classList.remove("active"));
-        dots[index].classList.add("active");
+        dots.forEach(dot => dot.classList.remove("active"));   // Remove active class from all dots
+        dots[index].classList.add("active");                   // Highlight the active dot
     }
 
-    // Auto-slide function
+    // Auto-slide function to switch images every 3 seconds
     function startAutoSlide() {
         autoSlideInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides; // Loop back to the first slide
+            currentIndex = (currentIndex + 1) % totalSlides; // Loop back to the first slide when reaching the end
             updateSlide(currentIndex);
         }, 3000); // Change every 3 seconds
     }
 
-    // Stop auto-slide temporarily when user interacts
+    // Reset auto-slide when user manually interacts with dots
     function resetAutoSlide() {
         clearInterval(autoSlideInterval);
         startAutoSlide(); // Restart auto-slide
@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const listTitle = document.querySelector("#gears-section h2");
 
+    // Observer to trigger typing effect when heading enters viewport
     const titleObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -98,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
                 setTimeout(() => {
-                    entry.target.classList.add("visible");
+                    entry.target.classList.add("visible"); // Add 'visible' class with delay for staggered effect
                 }, index * 300);
             } else {
                 entry.target.classList.remove("visible"); // Reset when scrolling out
@@ -110,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-   /* Preparation */
+   /* Preparation Section */
     // Create an intersection observer instance
 
  
@@ -123,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 preparationSection.classList.add('visible');
                 
             } else {
-                preparationSection.classList.remove('visible');
+                preparationSection.classList.remove('visible'); // Remove class when out of view
             }
         });
     }, {
@@ -134,39 +135,36 @@ document.addEventListener("DOMContentLoaded", function () {
     const preparationSection = document.getElementById('preparation-section');
     preparationObserver.observe(preparationSection);
 
-    // Shoelace 
+    /*====================== Shoelace Theme Toggle (Dark Mode On and Off) =============================================== */
  
    
     const toggleSwitch = document.getElementById("theme-toggle");
 
-    // Check local storage for theme preference
+    // Check and apply saved theme preference from local storage
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
         toggleSwitch.checked = true;
     }
 
+     // Toggle dark mode on theme switch change
     toggleSwitch.addEventListener("sl-change", () => {
         document.body.classList.toggle("dark-mode");
 
         if (document.body.classList.contains("dark-mode")) {
-            localStorage.setItem("theme", "dark");
+            localStorage.setItem("theme", "dark");   // Save dark mode preference
         } else {
-            localStorage.setItem("theme", "light");
+            localStorage.setItem("theme", "light");  // Save light mode preference
         }
     });
 
-   // Shoelace Business Hours and Emergency Contact
-    const dialog = document.querySelector('.dialog-overview');
-    const openButton = dialog.nextElementSibling;
-    const closeButton = dialog.querySelector('sl-button[slot="footer"]');
+   /*======================  Shoelace Business Hours and Emergency Contact Dialog Box ======================= */
+    const dialog = document.querySelector('.dialog-overview'); // Shoelace modal dialog
+    const openButton = dialog.nextElementSibling;              // Button to open dialog
+    const closeButton = dialog.querySelector('sl-button[slot="footer"]');   // Button to close dialog
 
-    openButton.addEventListener('click', () => dialog.show());
-    closeButton.addEventListener('click', () => dialog.hide());
+    openButton.addEventListener('click', () => dialog.show());     // Open dialog when button is clicked
+    closeButton.addEventListener('click', () => dialog.hide());     // Close dialog when button is clicked 
     
-
-
-
-
 });
 
 
